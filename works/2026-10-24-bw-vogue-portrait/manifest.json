@@ -1,0 +1,18 @@
+{
+  "id": "2026-10-24-bw-vogue-portrait",
+  "title": "黑白Vogue肖像",
+  "type": "image",
+  "file": "image.webp",
+  "thumb": "thumb.webp",
+  "width": 1024,
+  "height": 1536,
+  "prompt": "Made with Nano Banana 2.1 on @atlas_cloud_ai \n\nPrompt: \nUltra-realistic cinematic black-and-white Vogue editorial portrait of a beautiful Japanese woman. Three-quarter profile pose, shoulders turned away from the camera, head gently tilted upward and looking off-frame with a calm, dreamy expression and softly parted lips. Long, naturally wavy black hair with loose strands flowing across the face. Elegant off-shoulder white satin blouse, delicate sparkling earrings.\n\nDramatic hard side lighting casting bold diagonal shadows across the eyes and face, high-contrast chiaroscuro, minimal dark studio background. 85mm lens, shallow depth of field, razor-sharp eyes, hyper-detailed natural skin texture, subtle film grain, luxury fashion photography, timeless editorial aesthetic, ultra-photorealistic, 8K.",
+  "model": "gpt-image-2",
+  "tags": [
+    "人像",
+    "黑白",
+    "杂志"
+  ],
+  "date": "2026-10-24",
+  "source": "https://x.com/MissDelulu9/status/2113862505504407630"
+}

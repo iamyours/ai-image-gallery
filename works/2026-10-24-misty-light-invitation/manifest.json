@@ -1,0 +1,18 @@
+{
+  "id": "2026-10-24-misty-light-invitation",
+  "title": "雾光邀约海报",
+  "type": "image",
+  "file": "image.webp",
+  "thumb": "thumb.webp",
+  "width": 1024,
+  "height": 1536,
+  "prompt": "GPT2 x 早安 x 美学提示词\n\n居然，4点半就起床了，奇怪\n\nOpus5.5这么上瘾？\n今天有一个账号额度重置，还要太多东西需要优化修改。\n\n本组提示词：",
+  "model": "gpt-image-2",
+  "tags": [
+    "海报",
+    "排版",
+    "光影"
+  ],
+  "date": "2026-10-24",
+  "source": "https://x.com/xiaoxiaodong/status/2111210851097354331"
+}

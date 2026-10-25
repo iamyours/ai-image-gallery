@@ -1,0 +1,18 @@
+{
+  "id": "2026-10-24-hand-drawn-science-poster",
+  "title": "水循环科普挂图",
+  "type": "image",
+  "file": "image.webp",
+  "thumb": "thumb.webp",
+  "width": 1024,
+  "height": 1536,
+  "prompt": "GPT2 x 手绘牌面 x 轻快分栏 x 信息设计 x 科普 x 美学提示词\n\n很多小红书博主\n还有老师，对这种提示词感兴趣\n\n我先给出这一个例子\n希望自己用Opus5.5这么多算力， 能整出一大堆精品\n\n本组提示词如下：",
+  "model": "gpt-image-2",
+  "tags": [
+    "插画",
+    "科普",
+    "水循环"
+  ],
+  "date": "2026-10-24",
+  "source": "https://x.com/xiaoxiaodong/status/2112841549046505677"
+}
