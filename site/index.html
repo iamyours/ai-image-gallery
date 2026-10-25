@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 图片作品集</title>
+  <meta name="description" content="AI 生成图片作品展示，附完整提示词。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🖼️%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>AI 图片作品集</h1>
+      <p class="sub">每件作品都附带提示词，点开即可复制。</p>
+      <div class="controls">
+        <input id="search" type="search" placeholder="搜索标题、提示词、模型…" aria-label="搜索">
+        <span id="count" class="count"></span>
+      </div>
+      <nav id="tags" class="tags" aria-label="标签筛选"></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>没有找到匹配的作品。</p>
+  </main>
+
+  <footer class="wrap foot">
+    数据接口：<a href="works.json">works.json</a> · 托管于 GitHub Pages
+  </footer>
+
+  <dialog id="viewer" class="viewer">
+    <button class="close" id="close" aria-label="关闭">×</button>
+    <button class="nav prev" id="prev" aria-label="上一张">‹</button>
+    <button class="nav next" id="next" aria-label="下一张">›</button>
+    <div class="viewer-body">
+      <figure class="viewer-img"><img id="v-img" alt=""></figure>
+      <aside class="viewer-info">
+        <h2 id="v-title"></h2>
+        <dl class="meta">
+          <dt>模型</dt><dd id="v-model"></dd>
+          <dt>日期</dt><dd id="v-date"></dd>
+          <dt id="v-source-dt">来源</dt><dd id="v-source"></dd>
+        </dl>
+        <div id="v-tags" class="v-tags"></div>
+        <div class="prompt-head">
+          <h3>提示词</h3>
+          <button id="copy" class="copy">复制提示词</button>
+        </div>
+        <pre id="v-prompt" class="prompt"></pre>
+        <div id="v-neg-wrap" hidden>
+          <h3>反向提示词</h3>
+          <pre id="v-neg" class="prompt neg"></pre>
+        </div>
+        <a id="v-open" class="open" target="_blank" rel="noopener">查看原尺寸图片 ↗</a>
+      </aside>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

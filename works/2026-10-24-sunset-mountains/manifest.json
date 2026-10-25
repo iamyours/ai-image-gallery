@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-24-sunset-mountains",
+  "title": "示例：紫色黄昏的群山",
+  "type": "image",
+  "file": "image.webp",
+  "thumb": "thumb.webp",
+  "width": 2048,
+  "height": 2048,
+  "prompt": "layered mountain silhouettes at dusk, a huge pale sun, purple to coral gradient sky, flat vector illustration, minimal, calm atmosphere",
+  "model": "示例（脚本生成）",
+  "tags": [
+    "示例",
+    "风景",
+    "渐变",
+    "插画"
+  ],
+  "date": "2026-10-24",
+  "source": "scripts/make-samples.py"
+}

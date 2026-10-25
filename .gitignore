@@ -1,0 +1,7 @@
+dist/
+node_modules/
+originals/
+.DS_Store
+*.png
+*.jpg
+*.jpeg
