@@ -30,12 +30,35 @@ for (const d of dirs) {
     await stat(path.join(dir, m[k])).catch(() => { throw new Error(`works/${d.name}: 找不到 ${m[k]}`); });
   }
   const rel = `works/${d.name}/`;
+  const extra = {};
+  if (m.originals !== undefined) {
+    if (!Array.isArray(m.originals) || m.originals.some((f) => typeof f !== "string" || !f)) {
+      throw new Error(`works/${d.name}: originals 必须是文件名字符串数组`);
+    }
+    for (const f of m.originals) {
+      const target = path.resolve(dir, f);
+      if (path.relative(dir, target).startsWith("..") || path.isAbsolute(f)) {
+        throw new Error(`works/${d.name}: originals 路径不合法 ${f}`);
+      }
+      await stat(target).catch(() => { throw new Error(`works/${d.name}: 找不到原图 ${f}`); });
+    }
+    if (m.originals.length) {
+      extra.originals = m.originals.map((f) => rel + f);
+      extra.originals_urls = m.originals.map((f) => base + rel + f);
+    } else {
+      delete m.originals;
+    }
+  }
+  if (m.originals_credit !== undefined && (m.originals_credit === null || typeof m.originals_credit !== "object" || Array.isArray(m.originals_credit))) {
+    throw new Error(`works/${d.name}: originals_credit 必须是对象 {author, url}`);
+  }
   works.push({
     ...m,
     file: rel + m.file,
     thumb: rel + m.thumb,
     file_url: base + rel + m.file,
     thumb_url: base + rel + m.thumb,
+    ...extra,
   });
   await cp(dir, path.join(dist, rel), { recursive: true });
 }

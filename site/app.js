@@ -45,7 +45,7 @@
       const ar = w.width && w.height ? ` style="aspect-ratio:${w.width} / ${w.height}"` : "";
       const meta = [w.date, (w.tags || []).slice(0, 2).join(" · ")].filter(Boolean).join(" · ");
       return `<button type="button" class="card" data-i="${i}" aria-label="${esc(w.title)}">
-        <span class="ph"${ar}><img src="${esc(w.thumb)}" alt="${esc(w.title)}" loading="lazy" decoding="async"${wh}></span>
+        <span class="ph"${ar}><img src="${esc(w.thumb)}" alt="${esc(w.title)}" loading="lazy" decoding="async"${wh}>${hasOrig(w) ? '<span class="badge-orig">含 X 原图</span>' : ""}</span>
         <span class="cap"><span class="t">${esc(w.title)}</span><span class="m">${esc(meta)}</span></span>
       </button>`;
     }).join("");
@@ -101,6 +101,30 @@
     renderLightbox(w);
   }
 
+  const hasOrig = (w) => Array.isArray(w.originals) && w.originals.length > 0;
+
+  function renderOriginals(w) {
+    const sec = $("lb-originals");
+    if (!hasOrig(w)) {
+      sec.hidden = true;
+      $("lb-orig-row").innerHTML = "";
+      $("lb-orig-credit").innerHTML = "";
+      return;
+    }
+    const credit = w.originals_credit || {};
+    const author = credit.author || w.author || "原作者";
+    const link = [credit.url, w.source].find((u) => /^https?:\/\//.test(u || ""));
+    $("lb-orig-row").innerHTML = w.originals.map((u, i) =>
+      `<a class="lb-orig" href="${esc(u)}" target="_blank" rel="noopener" aria-label="打开 X 原图 ${i + 1}（新标签页）">` +
+      `<img src="${esc(u)}" alt="${esc(`X 原图 ${i + 1} · ${author}`)}" loading="lazy" decoding="async" draggable="false"></a>`
+    ).join("");
+    $("lb-orig-credit").innerHTML = link
+      ? `原图来自 <a href="${esc(link)}" target="_blank" rel="noopener">${esc(author)}</a> · <a href="${esc(link)}" target="_blank" rel="noopener">查看原帖</a>`
+      : `原图来自 ${esc(author)}`;
+    $("lb-orig-row").scrollLeft = 0;
+    sec.hidden = false;
+  }
+
   function renderLightbox(w) {
     $("lb-title").textContent = w.title;
     $("lb-counter").textContent = `${current + 1} / ${shown.length}`;
@@ -122,6 +146,7 @@
     $("lb-neg-wrap").hidden = !w.negative_prompt;
     $("lb-neg").textContent = w.negative_prompt || "";
 
+    renderOriginals(w);
     resetCopy();
     $("lb-bottom").scrollTop = 0;
 
