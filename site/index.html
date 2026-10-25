@@ -30,33 +30,44 @@
     数据接口：<a href="works.json">works.json</a> · 托管于 GitHub Pages
   </footer>
 
-  <dialog id="viewer" class="viewer">
-    <button class="close" id="close" aria-label="关闭">×</button>
-    <button class="nav prev" id="prev" aria-label="上一张">‹</button>
-    <button class="nav next" id="next" aria-label="下一张">›</button>
-    <div class="viewer-body">
-      <figure class="viewer-img"><img id="v-img" alt=""></figure>
-      <aside class="viewer-info">
-        <h2 id="v-title"></h2>
-        <dl class="meta">
-          <dt>模型</dt><dd id="v-model"></dd>
-          <dt>日期</dt><dd id="v-date"></dd>
-          <dt id="v-source-dt">来源</dt><dd id="v-source"></dd>
-        </dl>
-        <div id="v-tags" class="v-tags"></div>
-        <div class="prompt-head">
-          <h3>提示词</h3>
-          <button id="copy" class="copy">复制提示词</button>
-        </div>
-        <pre id="v-prompt" class="prompt"></pre>
-        <div id="v-neg-wrap" hidden>
-          <h3>反向提示词</h3>
-          <pre id="v-neg" class="prompt neg"></pre>
-        </div>
-        <a id="v-open" class="open" target="_blank" rel="noopener">查看原尺寸图片 ↗</a>
-      </aside>
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+    <div id="lb-stage" class="lb-stage">
+      <div id="lb-canvas" class="lb-canvas">
+        <img id="lb-preview" class="lb-img lb-preview" alt="" aria-hidden="true" draggable="false">
+        <img id="lb-img" class="lb-img lb-full" alt="" decoding="async" draggable="false">
+      </div>
+      <div id="lb-loading" class="lb-loading" role="status">
+        <span class="lb-spinner" aria-hidden="true"></span>
+        <span>正在加载原图…</span>
+      </div>
+      <button type="button" id="lb-prev" class="lb-arrow lb-prev" aria-label="上一张图片">‹</button>
+      <button type="button" id="lb-next" class="lb-arrow lb-next" aria-label="下一张图片">›</button>
     </div>
-  </dialog>
+
+    <button type="button" id="lb-close" class="lb-close" aria-label="关闭">×</button>
+
+    <div class="lb-bottom" id="lb-bottom">
+      <div class="lb-head">
+        <h2 id="lb-title"></h2>
+        <span id="lb-counter" class="lb-counter" aria-live="polite"></span>
+      </div>
+      <p id="lb-meta" class="lb-meta"></p>
+      <div class="lb-tools">
+        <a id="lb-open" class="lb-open" href="#" target="_blank" rel="noopener">查看原图 ↗</a>
+        <button type="button" id="lb-copy" class="lb-copy">复制提示词</button>
+        <button type="button" id="lb-prompt-toggle" class="lb-toggle" aria-expanded="false" aria-controls="lb-prompt-panel">
+          提示词 <span class="lb-chev" aria-hidden="true">⌄</span>
+        </button>
+      </div>
+      <div id="lb-prompt-panel" class="lb-prompt-panel" hidden>
+        <pre id="lb-prompt" class="lb-prompt"></pre>
+        <div id="lb-neg-wrap" hidden>
+          <h3 class="lb-neg-title">反向提示词</h3>
+          <pre id="lb-neg" class="lb-prompt lb-neg"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
