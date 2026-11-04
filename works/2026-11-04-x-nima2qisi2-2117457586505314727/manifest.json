@@ -1,0 +1,26 @@
+{
+  "id": "2026-11-04-x-nima2qisi2-2117457586505314727",
+  "title": "根据上传图片创作一张具有强烈电影视觉 · @nima2qisi2",
+  "type": "image",
+  "file": "image.webp",
+  "thumb": "thumb.webp",
+  "width": 1024,
+  "height": 1536,
+  "prompt": "根据上传图片创作一张具有强烈电影视觉冲击力的超现实球形空间漂浮艺术摄影作品。\n\n【1. 环境识别与球体重构】\n\n自动识别原图中的环境、建筑结构、空间布局、材质、颜色及标志性元素。",
+  "model": "gpt-image-2",
+  "tags": [
+    "X 自动",
+    "@nima2qisi2"
+  ],
+  "date": "2026-11-04",
+  "source": "https://x.com/nima2qisi2/status/2117457586505314727",
+  "author": "@nima2qisi2",
+  "originals": [
+    "orig-1.webp",
+    "orig-2.webp"
+  ],
+  "originals_credit": {
+    "author": "@nima2qisi2",
+    "url": "https://x.com/nima2qisi2/status/2117457586505314727"
+  }
+}
