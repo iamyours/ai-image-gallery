@@ -1,0 +1,18 @@
+{
+  "id": "2026-11-10-x-sandmrk-2119668604241387613",
+  "title": "Muse Video Prompt · @sandmrk",
+  "type": "image",
+  "file": "image.webp",
+  "thumb": "thumb.webp",
+  "width": 1024,
+  "height": 1536,
+  "prompt": "Muse Video Prompt\nFormat lock: Aspect ratio 16:9 (source 3840×2160, 30 fps; generate at 1920×1080, 30 fps) — the output MUST use exactly this 16:9 ratio; no cropping, no reframing, no letterbox change.\n\nMaster (include with every clip):\nIdentity &amp; creature lock: Character A — THE",
+  "model": "gpt-image-2",
+  "tags": [
+    "X 自动",
+    "@sandmrk"
+  ],
+  "date": "2026-11-10",
+  "source": "https://x.com/sandmrk/status/2119668604241387613",
+  "author": "@sandmrk"
+}
